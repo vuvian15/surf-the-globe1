@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name That Country Game</title>
+    <link rel="stylesheet" type="text/css" href="./css/game-home.css">
+	<script type="importmap">
+        {
+            "imports": 
+            {
+              "countrySeeds": "../js/country-seeds.js",
+			  "gameHome": "../js/game-home.js",
+			  "three": "/build/three.module.js",
+              "three/examples/jsm/controls/OrbitControls":"/jsm/controls/OrbitControls.js",
+              "three/examples/jsm/libs/stats.module":"/jsm/libs/stats.module.js",
+              "three/examples/jsm/libs/dat.gui.module":"/jsm/libs/dat.gui.module.js"
+            }
+        }
+    </script>
+</head>
+<body>
+
+	<div class="title">
+		<h1 id="heading">
+			Name that Country?
+		</h1>
+		<div class="lat-long">
+			<h3>
+				Latitude: <span id="latitude"></span>
+			</h3>
+			<h3>
+				Longitude: <span id="longitude"></span>
+			</h3>
+		</div>
+	</div>
+	
+	
+
+	<div id="stripe">
+		<button id="reset">New Lat/Long</button>
+        <button onclick="location.href='/'" type="button" class="home-button">Home</button>
+		<span id="message"></span>
+		<button data-modal-target="#modal">Help</button>
+		<button data-modal-target="#game-modal" id="hint" class="mode">Hint</button>
+	</div>
+
+	<div id="container">
+
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+
+	</div>
+
+	<div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="modal-title"><h3>News Globe Help Screen</h3></div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            <h3>Option 1 (Preferred):</h3>
+            <p>1. Interact with globe to find country you'd like information about</p>
+            <p>2. Click that country</p>
+            <p>3. Ensure the latitude and longitude form is filled out</p>
+            <p>4. Click Search</p>
+            <h3>Option 2:</h3>
+            <p>1. Enter valid latitude and longitude coordinate points into the form</p>
+            <p>2. Click Search</p>
+        </div>
+    </div>
+	<div class="modal" id="game-modal">
+        <div class="modal-header">
+            <div class="modal-title"><h3>Game Help Screen</h3></div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body" id="game-modal-body">
+            <!-- GAME GLOBE GOES HERE -->
+        </div>
+    </div>
+    <div id="overlay"></div>
+
+	<script type="module" src="./js/game-home.js"></script>
+	<script type="module" src="./js/game-globe.js"></script>
+
+</body>
+</html>
