@@ -110,10 +110,6 @@ app.post('/search', async (req, res) => { // post request to route search
     });
 
 
-    //res.send('worked')
-    res.redirect('/results') // redirects to results route, which will display results to user
-    //res.send('worked')
-    //s.redirect('/results') // redirects to results route, which will display results to user
 
     var options = {
         method: 'GET',
